@@ -3,6 +3,7 @@ import Start from "./components/Start";
 import Question from "./components/Question";
 import End from "./components/End";
 import Modal from "./components/Modal";
+import { PageWrapper } from "../pageWrapper";
 import quizData from "./data/quiz";
 import "./App.css";
 let interval;
@@ -38,36 +39,38 @@ const Game3 = () => {
   };
 
   return (
-    <div className="App" style={{ display: "flex" }}>
-      {step === 1 && <Start onQuizStart={quizStartHandler} />}
-      {step === 2 && (
-        <Question
-          data={quizData.data[activeQuestion]}
-          onAnswerUpdate={setAnswers}
-          numberOfQuestions={quizData.data.length}
-          activeQuestion={activeQuestion}
-          onSetActiveQuestion={setActiveQuestion}
-          onSetStep={setStep}
-        />
-      )}
-      {step === 3 && (
-        <End
-          results={answers}
-          data={quizData.data}
-          onReset={resetClickHandler}
-          onAnswersCheck={() => setShowModal(true)}
-          time={time}
-        />
-      )}
+    <PageWrapper>
+      <div className="App" style={{ display: "flex" }}>
+        {step === 1 && <Start onQuizStart={quizStartHandler} />}
+        {step === 2 && (
+          <Question
+            data={quizData.data[activeQuestion]}
+            onAnswerUpdate={setAnswers}
+            numberOfQuestions={quizData.data.length}
+            activeQuestion={activeQuestion}
+            onSetActiveQuestion={setActiveQuestion}
+            onSetStep={setStep}
+          />
+        )}
+        {step === 3 && (
+          <End
+            results={answers}
+            data={quizData.data}
+            onReset={resetClickHandler}
+            onAnswersCheck={() => setShowModal(true)}
+            time={time}
+          />
+        )}
 
-      {showModal && (
-        <Modal
-          onClose={() => setShowModal(false)}
-          results={answers}
-          data={quizData.data}
-        />
-      )}
-    </div>
+        {showModal && (
+          <Modal
+            onClose={() => setShowModal(false)}
+            results={answers}
+            data={quizData.data}
+          />
+        )}
+      </div>
+    </PageWrapper>
   );
 };
 

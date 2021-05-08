@@ -8,7 +8,6 @@ import Footer from "./Components/Footer/Footer";
 function App() {
   return (
     <div>
-      
       <Router>
         <Navbar />
         <Switch>
@@ -22,7 +21,7 @@ function App() {
           ))}
         </Switch>
       </Router>
-      
+      <Footer />
       <GlobalStyles />
     </div>
   );

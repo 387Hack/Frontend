@@ -1,8 +1,8 @@
 import HomePage from "../../Pages/HomePage/HomePage";
-import Error from "../../Pages/Error/Error";
-import Profile from "../../Pages/Profile/Profile";
 import SignUp from "../../Pages/SignUp/SignUp";
 import LogIn from "../../Pages/LogIn/Login";
+import Game1 from "../../Pages/Game1/Game1";
+import Game3 from "../../Pages/Game3/Game3";
 export const Routes = [
   {
     id: 1,
@@ -12,14 +12,14 @@ export const Routes = [
   },
   {
     id: 2,
-    component: Error,
-    path: "/error",
+    component: Game1,
+    path: "/game1",
     exact: true,
   },
   {
     id: 3,
-    component: Profile,
-    path: "/profile",
+    component: Game3,
+    path: "/game3",
     exact: true,
   },
   {

@@ -32,6 +32,28 @@ main {
   padding: 0;
 }
 
+label.radio {
+  display: block;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+label.radio+.radio {
+  margin-left: 0;
+}
+
+.card {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+label.radio input {
+  margin-right: 10px;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap');
 
 body {

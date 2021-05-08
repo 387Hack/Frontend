@@ -48,7 +48,7 @@ export default function Game2() {
 
   return (
     <div>
-      Sound Game {level} {Count}
+      <h1>Hearing Game</h1>
       <div>
         <div>
           <button onClick={nextHandler}>{level ? "Next" : "Start"}</button>

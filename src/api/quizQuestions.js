@@ -84,7 +84,59 @@ var quizQuestions = [
                content: "Playing Games Online"
           }
       ]
-  }
+  },
+  {
+     question: "Who is considered as 'Hit-Man' of Indian cricket world?",
+      answers: [
+          {
+              type: "40 and above",
+              content: "Virat kohli"
+          },
+          {
+               type: "60 and above",
+               content: "No idea!"
+          },
+          {
+               type: "20 and above",
+               content: "Rohit Sharma"
+          }
+      ]
+  },
+  {
+     question: "How do you see Youtube as a career option?",
+      answers: [
+          {
+              type: "40 and above",
+              content: "Okayish"
+          },
+          {
+               type: "60 and above",
+               content: "Waste of time and energy!"
+          },
+          {
+               type: "20 and above",
+               content: "Growing platform"
+          }
+      ]
+  },
+  {
+     question: "Did you ever use Cassette?",
+      answers: [
+          {
+              type: "40 and above",
+              content: "Yes"
+          },
+          {
+               type: "60 and above",
+               content: "Spent the entire childhood using it"
+          },
+          {
+               type: "20 and above",
+               content: "Not at all"
+          }
+      ]
+  },
+  
 ];
 
 export default quizQuestions;

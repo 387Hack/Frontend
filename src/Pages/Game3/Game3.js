@@ -38,7 +38,7 @@ const Game3 = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{ display: "flex" }}>
       {step === 1 && <Start onQuizStart={quizStartHandler} />}
       {step === 2 && (
         <Question

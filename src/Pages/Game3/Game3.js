@@ -4,7 +4,7 @@ import Question from "./components/Question";
 import End from "./components/End";
 import Modal from "./components/Modal";
 import quizData from "./data/quiz";
-
+import "./App.css";
 let interval;
 
 const Game3 = () => {

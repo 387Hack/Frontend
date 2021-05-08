@@ -3,9 +3,11 @@ import { Routes } from "./Assets/Routes/Routes";
 import Navbar from "./Components/Navbar/Navbar";
 import "bulma/css/bulma.min.css";
 import { GlobalStyles } from "./Assets/styles/GlobalStyles";
+import Footer from "./Components/Footer/Footer";
 function App() {
   return (
     <div>
+      
       <Router>
         <Navbar />
         <Switch>
@@ -19,6 +21,7 @@ function App() {
           ))}
         </Switch>
       </Router>
+      
       <GlobalStyles />
     </div>
   );

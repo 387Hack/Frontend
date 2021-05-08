@@ -4,7 +4,7 @@
 }
 
 .App-header {
-    background-color: #222;
+    background-color: rgb(48, 44, 44);
     padding: 20px;
     color: white;
     text-align: center;
@@ -12,6 +12,7 @@
 
 .App-intro {
     font-size: large;
+    align-items: center ;
 }
 
 @keyframes spin {

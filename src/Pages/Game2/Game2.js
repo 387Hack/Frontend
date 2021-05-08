@@ -10,7 +10,7 @@ export default function Game2() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    bellSound.playbackRate = 1.5 + level * 0.03;
+    bellSound.playbackRate = 1.3 + level * 0.15;
 
     bellSound.play();
     let count = 0;
@@ -50,7 +50,9 @@ export default function Game2() {
     <div>
       Sound Game {level} {Count}
       <div>
-        <button onClick={nextHandler}>{level ? "Next" : "Start"}</button>
+        <div>
+          <button onClick={nextHandler}>{level ? "Next" : "Start"}</button>
+        </div>
         <input
           onChange={(e) => {
             setUserInput(e.target.value);

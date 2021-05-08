@@ -9,7 +9,7 @@ var quizQuestions = [
           },
           {
               type: "20 and above",
-              content: "Madhubala"
+              content: "Alia Bhatt"
           },
           {
               type: "60 and above",

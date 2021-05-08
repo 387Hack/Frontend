@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0",
     "bulma": "^0.9.2",
+    "mdbreact": "^5.0.2",
     "node-sass": "^5.0.0",
     "postcss-loader": "^5.2.0",
     "prop-types": "^15.7.2",

@@ -4,6 +4,7 @@ import Quiz from "../../Components/Quiz";
 import Result from "../../Components/Result";
 import logo from "../../Assets/Images/avatar1.png";
 import "./Game.css";
+import "./Game1.css";
 
 class Game1 extends Component {
   constructor(props) {
@@ -128,8 +129,8 @@ class Game1 extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Age Quiz</h2>
         </div>
-        <div style={{display:"flex",align:"center"}}>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+        <div style={{ display: "flex", align: "center" }}>
+          {this.state.result ? this.renderResult() : this.renderQuiz()}
         </div>
       </div>
     );

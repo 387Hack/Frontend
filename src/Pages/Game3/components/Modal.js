@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Modal = ({ onClose, results, data }) => {
-  return(
+  return (
     <div className="modal is-active">
       <div className="modal-background" onClick={onClose}></div>
       <div className="modal-card">
@@ -13,10 +13,27 @@ const Modal = ({ onClose, results, data }) => {
           <ul>
             {results.map((result, i) => (
               <li key={i} className="mb-6">
-              <img src={result.q} height="170px" width="170px" alt="question"/>
+                <img
+                  src={result.q}
+                  height="170px"
+                  width="170px"
+                  alt="question"
+                />
                 {/* <p><strong>{result.q}</strong></p> */}
-                <p className={result.a === data[i].answer ? 'has-background-success has-text-white p-2' : 'has-background-danger has-text-white p-2'}>Your answer: {result.a}</p>
-                {result.a !== data[i].answer && <p className="has-background-link has-text-white p-2">Correct answer: {data[i].answer}</p>}
+                <p
+                  className={
+                    result.a === data[i].answer
+                      ? "has-background-success has-text-white p-2"
+                      : "has-background-danger has-text-white p-2"
+                  }
+                >
+                  Your answer: {result.a}
+                </p>
+                {result.a !== data[i].answer && (
+                  <p className="has-background-link has-text-white p-2">
+                    Correct answer: {data[i].answer}
+                  </p>
+                )}
               </li>
             ))}
           </ul>
@@ -24,6 +41,6 @@ const Modal = ({ onClose, results, data }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Modal;

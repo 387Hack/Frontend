@@ -3,6 +3,7 @@ import Error from "../../Pages/Error/Error";
 import Profile from "../../Pages/Profile/Profile";
 import SignUp from "../../Pages/SignUp/SignUp";
 import LogIn from "../../Pages/LogIn/Login";
+import SoundGame from "../../Pages/SoundGame/SoundGame";
 export const Routes = [
   {
     id: 1,
@@ -33,5 +34,10 @@ export const Routes = [
     component: LogIn,
     path: "/login",
     exact: true,
+  },
+  {
+    id: 6,
+    component: SoundGame,
+    path: "/soundgame",
   },
 ];

@@ -18,6 +18,9 @@ export default function Navbar() {
         <Link to="login">
           <li>Logout</li>
         </Link>
+        <Link to="soundgame">
+          <li>SoundGame</li>
+        </Link>
       </UlWrapper>
     </NavbarWrapper>
   );

@@ -3,7 +3,7 @@ import SignUp from "../../Pages/SignUp/SignUp";
 import LogIn from "../../Pages/LogIn/Login";
 import Game1 from "../../Pages/Game1/Game1";
 import Game3 from "../../Pages/Game3/Game3";
-import SoundGame from "../../Pages/SoundGame/SoundGame";
+import Game2 from "../../Pages/Game2/Game2";
 export const Routes = [
   {
     id: 1,
@@ -37,7 +37,7 @@ export const Routes = [
   },
   {
     id: 6,
-    component: SoundGame,
-    path: "/soundgame",
+    component: Game2,
+    path: "/game2",
   },
 ];

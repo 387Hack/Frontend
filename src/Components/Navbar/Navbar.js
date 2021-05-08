@@ -15,8 +15,8 @@ export default function Navbar() {
         <Link to="/game3">
           <li>Game3</li>
         </Link>
-        <Link to="/login">
-          <li>Logout</li>
+        <Link to="/game2">
+          <li>Game2</li>
         </Link>
         <Link to="/game1">
           <li>Game1</li>

@@ -24,7 +24,7 @@ export default function Game2() {
         setLoading(false);
       }
     };
-  }, [level]);
+  }, [level, Count, bellSound]);
 
   const nextHandler = () => {
     if (loading) {

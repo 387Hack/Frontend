@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import quizQuestions from "../../api/quizQuestions";
 import Quiz from "../../Components/Quiz";
+import { PageWrapper } from "../pageWrapper";
 import Result from "../../Components/Result";
 import logo from "../../Assets/Images/avatar1.png";
 import "./Game.css";
@@ -124,15 +125,17 @@ class Game1 extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Age Quiz</h2>
+      <PageWrapper>
+        <div className="App">
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h2>Age Quiz</h2>
+          </div>
+          <div style={{ display: "flex", align: "center" }}>
+            {this.state.result ? this.renderResult() : this.renderQuiz()}
+          </div>
         </div>
-        <div style={{ display: "flex", align: "center" }}>
-          {this.state.result ? this.renderResult() : this.renderQuiz()}
-        </div>
-      </div>
+      </PageWrapper>
     );
   }
 }

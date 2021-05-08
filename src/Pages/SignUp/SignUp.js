@@ -1,10 +1,11 @@
 import React from "react";
-
+import { PageWrapper } from "../pageWrapper";
 export default function SignUp() {
   return (
-    <div>
-      <h1>Welcome to SignUp</h1>
-      
-    </div>
+    <PageWrapper>
+      <div>
+        <h1>Welcome to SignUp</h1>
+      </div>
+    </PageWrapper>
   );
 }

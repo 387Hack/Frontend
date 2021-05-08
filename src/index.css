@@ -69,3 +69,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ui.card:last-child {
+  margin-bottom: 0;
+  min-width: 30%;
+}
+
+@media (max-width:800px) {
+  .ui.card:last-child {
+    margin-bottom: 0;
+    min-width: 60%;
+  }
+}

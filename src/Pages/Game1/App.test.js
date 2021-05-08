@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './Game1';
+import App from './Game';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

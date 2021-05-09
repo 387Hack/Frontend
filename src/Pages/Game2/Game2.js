@@ -86,7 +86,7 @@ export default function Game2() {
           style={{ margin: "auto", display: "flex", justifyContent: "center" }}
         >
           <Card>
-            <div style={{ fontSize: "1.8rem" }}>{status}</div>
+            <div style={{ fontSize: "1.8rem", padding: "1rem" }}>{status}</div>
             <Image src="https://picsum.photos/200/150" wrapped ui={false} />
             <Card.Content>
               <Card.Header>Hey</Card.Header>

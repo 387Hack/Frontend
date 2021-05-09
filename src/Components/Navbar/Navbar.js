@@ -42,27 +42,27 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/game1" className="nav-links" onClick={closeMobileMenu}>
-                Game1
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/game2" className="nav-links" onClick={closeMobileMenu}>
-                Game2
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/game3" className="nav-links" onClick={closeMobileMenu}>
-                Game3
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link
                 to="/profile"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Profile
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/game2" className="nav-links" onClick={closeMobileMenu}>
+                Game1
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/game3" className="nav-links" onClick={closeMobileMenu}>
+                Game2
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/game1" className="nav-links" onClick={closeMobileMenu}>
+                Game3
               </Link>
             </li>
 

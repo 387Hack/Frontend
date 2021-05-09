@@ -8,7 +8,7 @@ export const NavbarWrapper = styled.div`
 
 export const UlWrapper = styled.div`
   display: flex;
-  width: 45%;
+  width: 50%;
   justify-content: space-around;
   list-style: none;
 

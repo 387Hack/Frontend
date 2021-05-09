@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 //import App from ''
 export default function HomePage() {
@@ -22,46 +23,54 @@ export default function HomePage() {
       <Container class="container">
         <Row>
           <Col>
-            <Card border="secondary" style={{ width: "20em" }}>
-              <Card.Header>Game 1</Card.Header>
-              <Card.Body style={{ fontFamily: "monospace" }}>
-                <Card.Title style={{ fontFamily: "monospace", color: "red" }}>
-                  The Bell Game
-                </Card.Title>
-                <Card.Text>
-                  Listen to the bell count and guess it correctly to move to the
-                  next round!!!!!
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            <Link to="/game2">
+              <Card border="secondary" style={{ width: "20em" }}>
+                <Card.Header>Game 1</Card.Header>
+                <Card.Body style={{ fontFamily: "monospace" }}>
+                  <Card.Title style={{ fontFamily: "monospace", color: "red" }}>
+                    The Bell Game
+                  </Card.Title>
+                  <Card.Text>
+                    Listen to the bell count and guess it correctly to move to
+                    the next round!!!!!
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
           </Col>
           <Col>
-            <Card border="primary" style={{ width: "20em" }}>
-              <Card.Header>Game 2</Card.Header>
-              <Card.Body style={{ fontFamily: "monospace" }}>
-                <Card.Title style={{ fontFamily: "monospace", color: "red" }}>
-                  The Sight Game
-                </Card.Title>
-                <Card.Text>
-                  Some quick guesses here will make you score points and also
-                  test your vision.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            <Link to="/game3">
+              <Card border="primary" style={{ width: "20em" }}>
+                <Card.Header>Game 2</Card.Header>
+                <Card.Body style={{ fontFamily: "monospace" }}>
+                  <Card.Title style={{ fontFamily: "monospace", color: "red" }}>
+                    The Sight Game
+                  </Card.Title>
+                  <Card.Text>
+                    Some quick guesses here will make you score points and also
+                    test your vision.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
           </Col>
           <Col>
-            <Card border="primary" style={{ width: "20em" }}>
-              <Card.Header style={{ alignText: "center" }}>Game 3</Card.Header>
-              <Card.Body style={{ fontFamily: "monospace" }}>
-                <Card.Title style={{ fontFamily: "monospace", color: "red" }}>
-                  The Age Quiz
-                </Card.Title>
-                <Card.Text>
-                  Answer some of the interesting questions from your generation
-                  and earn points!!!!!!
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            <Link to="/game1">
+              <Card border="primary" style={{ width: "20em" }}>
+                <Card.Header style={{ alignText: "center" }}>
+                  Game 3
+                </Card.Header>
+                <Card.Body style={{ fontFamily: "monospace" }}>
+                  <Card.Title style={{ fontFamily: "monospace", color: "red" }}>
+                    The Age Quiz
+                  </Card.Title>
+                  <Card.Text>
+                    Answer some of the interesting questions from your
+                    generation and earn points!!!!!!
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
           </Col>
         </Row>
       </Container>

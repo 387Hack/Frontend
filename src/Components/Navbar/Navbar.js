@@ -21,6 +21,9 @@ export default function Navbar() {
         <Link to="/login">
           <li>Login</li>
         </Link>
+        <Link to="/profile">
+          <li>Profile</li>
+        </Link>
         <Link to="/signup">
           <li>Signup</li>
         </Link>

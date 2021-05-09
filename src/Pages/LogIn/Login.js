@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Icon } from "react-icons-kit";
 import { hipster2 } from "react-icons-kit/icomoon";
 import { LinkStyled, TextFieldCustom } from "./Login.style";
+import { useHistory } from "react-router-dom";
+import swal from "sweetalert";
+import client from "../../utils/Connection";
 import {
   makeStyles,
   Container,
@@ -11,6 +14,9 @@ import {
   Button,
   Avatar,
 } from "@material-ui/core";
+
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -43,13 +49,32 @@ export default function LogIn() {
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let history = useHistory();
 
   const onChange = (name, value) => {
     name(value);
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     console.log(email, password);
+    const data = {
+      email,
+      password,
+    };
+    if (!email || !password) swal("Please fill all field");
+    else {
+      try {
+        const res = await client.post("/auth/signin", data);
+        if (res.status === 200) {
+          cookies.set("token", res.data.token, { path: "/" });
+          history.push("/profile");
+        } else {
+          swal("Incorrect email or password");
+        }
+      } catch (err) {
+        swal("Incorrect data");
+      }
+    }
   };
 
   return (
@@ -66,7 +91,6 @@ export default function LogIn() {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextFieldCustom
-                variant="outlined"
                 required
                 fullWidth
                 label="Email Address"
@@ -78,7 +102,6 @@ export default function LogIn() {
             </Grid>
             <Grid item xs={12}>
               <TextFieldCustom
-                variant="outlined"
                 required
                 fullWidth
                 label="Password"

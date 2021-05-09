@@ -6,6 +6,11 @@ import Result from "../../Components/Result";
 import logo from "../../Assets/Images/avatar1.png";
 import "./Game.css";
 import "./Game1.css";
+import { BACKEND_URL } from "../../Assets/Constants/index";
+import { withRouter } from "react-router-dom";
+
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 class Game1 extends Component {
   constructor(props) {
@@ -25,6 +30,16 @@ class Game1 extends Component {
   }
 
   componentDidMount() {
+    fetch(`${BACKEND_URL}auth/protected`, {
+      headers: {
+        Authorization: "Bearer " + cookies.get("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.props.history.push("/login");
+      });
+
     const shuffledAnswerOptions = quizQuestions.map((question) =>
       this.shuffleArray(question.answers)
     );
@@ -140,4 +155,4 @@ class Game1 extends Component {
   }
 }
 
-export default Game1;
+export default withRouter(Game1);

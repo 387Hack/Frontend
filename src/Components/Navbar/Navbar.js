@@ -18,8 +18,8 @@ export default function Navbar() {
         <Link to="/game3">
           <li>Game3</li>
         </Link>
-        <Link to="/profile">
-          <li>Profile</li>
+        <Link to="/login">
+          <li>Login</li>
         </Link>
         <Link to="/signup">
           <li>Signup</li>

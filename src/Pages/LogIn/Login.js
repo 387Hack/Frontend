@@ -17,6 +17,7 @@ import {
 
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
+const cookies1 = new Cookies();
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -67,6 +68,8 @@ export default function LogIn() {
         const res = await client.post("/auth/signin", data);
         if (res.status === 200) {
           cookies.set("token", res.data.token, { path: "/" });
+          console.log(res);
+          cookies1.set("name", res.data.user.name, { path: "/" });
           history.push("/profile");
         } else {
           swal("Incorrect email or password");

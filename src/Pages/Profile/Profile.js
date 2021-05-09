@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { PageWrapper } from "../pageWrapper";
 import "./Profile.css";
 import { useHistory } from "react-router-dom";
@@ -6,8 +6,10 @@ import { BACKEND_URL } from "../../Assets/Constants/index";
 
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
+const cookies1 = new Cookies();
 export default function Profile() {
   const history = useHistory();
+  const [name, setName] = useState("Name");
 
   useEffect(() => {
     fetch(`${BACKEND_URL}auth/protected`, {
@@ -17,8 +19,11 @@ export default function Profile() {
     })
       .then((res) => res.json())
       .then((res) => {
-        history.push("/login");
+        if (res.error) {
+          history.push("/login");
+        }
       });
+    setName(cookies1.get("name"));
   }, [history]);
 
   return (
@@ -33,7 +38,7 @@ export default function Profile() {
         />
         <div>
           <h1>
-            <b>Name</b>
+            <b>{name}</b>
           </h1>
           <h1>
             <b>Total Points Earned</b>

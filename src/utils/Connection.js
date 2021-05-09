@@ -7,7 +7,6 @@ const cookies = new Cookies();
 const fetchClient = () => {
   const defaultOptions = {
     baseURL: `${BACKEND_URL}`,
-    timeout: 1000,
   };
 
   let instance = axios.create(defaultOptions);

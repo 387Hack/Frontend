@@ -6,6 +6,13 @@ import Modal from "./components/Modal";
 import { PageWrapper } from "../pageWrapper";
 import quizData from "./data/quiz";
 import "./App.css";
+
+import { useHistory } from "react-router-dom";
+import { BACKEND_URL } from "../../Assets/Constants/index";
+
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+
 let interval;
 
 const Game3 = () => {
@@ -14,6 +21,18 @@ const Game3 = () => {
   const [answers, setAnswers] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [time, setTime] = useState(0);
+  const history = useHistory();
+  useEffect(() => {
+    fetch(`${BACKEND_URL}auth/protected`, {
+      headers: {
+        Authorization: "Bearer " + cookies.get("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        history.push("/login");
+      });
+  }, [history]);
 
   useEffect(() => {
     if (step === 3) {

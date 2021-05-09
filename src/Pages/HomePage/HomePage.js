@@ -23,9 +23,27 @@ export default function HomePage() {
       <Container class="container">
         <Row>
           <Col>
+            <Link to="/game1">
+              <Card border="primary" style={{ width: "20em" }}>
+                <Card.Header style={{ alignText: "center" }}>
+                  Game 1
+                </Card.Header>
+                <Card.Body style={{ fontFamily: "monospace" }}>
+                  <Card.Title style={{ fontFamily: "monospace", color: "red" }}>
+                    The Age Quiz
+                  </Card.Title>
+                  <Card.Text>
+                    Answer some of the interesting questions from your
+                    generation and earn points!!!!!!
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
+          <Col>
             <Link to="/game2">
               <Card border="secondary" style={{ width: "20em" }}>
-                <Card.Header>Game 1</Card.Header>
+                <Card.Header>Game 2</Card.Header>
                 <Card.Body style={{ fontFamily: "monospace" }}>
                   <Card.Title style={{ fontFamily: "monospace", color: "red" }}>
                     The Bell Game
@@ -41,7 +59,7 @@ export default function HomePage() {
           <Col>
             <Link to="/game3">
               <Card border="primary" style={{ width: "20em" }}>
-                <Card.Header>Game 2</Card.Header>
+                <Card.Header>Game 3</Card.Header>
                 <Card.Body style={{ fontFamily: "monospace" }}>
                   <Card.Title style={{ fontFamily: "monospace", color: "red" }}>
                     The Sight Game
@@ -49,24 +67,6 @@ export default function HomePage() {
                   <Card.Text>
                     Some quick guesses here will make you score points and also
                     test your vision.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Link>
-          </Col>
-          <Col>
-            <Link to="/game1">
-              <Card border="primary" style={{ width: "20em" }}>
-                <Card.Header style={{ alignText: "center" }}>
-                  Game 3
-                </Card.Header>
-                <Card.Body style={{ fontFamily: "monospace" }}>
-                  <Card.Title style={{ fontFamily: "monospace", color: "red" }}>
-                    The Age Quiz
-                  </Card.Title>
-                  <Card.Text>
-                    Answer some of the interesting questions from your
-                    generation and earn points!!!!!!
                   </Card.Text>
                 </Card.Body>
               </Card>

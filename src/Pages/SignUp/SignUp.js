@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Icon } from "react-icons-kit";
 import { hipster2 } from "react-icons-kit/icomoon";
-import { LinkStyled, TextFieldCustom } from "./SignUp.style";
+import { LinkStyled } from "./SignUp.style";
 import {
   makeStyles,
   Container,
@@ -10,7 +10,11 @@ import {
   CssBaseline,
   Button,
   Avatar,
+  TextField,
 } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
+import swal from "sweetalert";
+import client from "../../utils/Connection";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -46,11 +50,31 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
 
+  let history = useHistory();
   const onChange = (name, value) => {
     name(value);
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
+    if (!name || !email || !password || !password2) {
+      swal("Please fill the form");
+      return;
+    }
+    if (password !== password2) {
+      swal("Password Did not matched");
+      return;
+    }
+    const res = await client.post("/auth/signup", {
+      name: name,
+      email: email,
+      password: password,
+    });
+    console.log(res);
+    if (res.status === 200) {
+      history.push("/login");
+    } else {
+      swal("Something went wrong try again");
+    }
     console.log(name, email, password, password2);
   };
 
@@ -67,9 +91,8 @@ export default function SignUp() {
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <TextFieldCustom
+              <TextField
                 autoComplete="name"
-                variant="outlined"
                 required
                 fullWidth
                 onChange={(e) => {
@@ -81,8 +104,7 @@ export default function SignUp() {
             </Grid>
 
             <Grid item xs={12}>
-              <TextFieldCustom
-                variant="outlined"
+              <TextField
                 required
                 fullWidth
                 label="Email Address"
@@ -93,8 +115,7 @@ export default function SignUp() {
               />
             </Grid>
             <Grid item xs={12}>
-              <TextFieldCustom
-                variant="outlined"
+              <TextField
                 required
                 fullWidth
                 label="Password"
@@ -106,8 +127,7 @@ export default function SignUp() {
               />
             </Grid>
             <Grid item xs={12}>
-              <TextFieldCustom
-                variant="outlined"
+              <TextField
                 required
                 fullWidth
                 label="Confirm Password"

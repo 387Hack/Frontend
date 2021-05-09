@@ -5,6 +5,7 @@ import Game1 from "../../Pages/Game1/Game";
 import Game3 from "../../Pages/Game3/Game3";
 import Game2 from "../../Pages/Game2/Game2";
 import Profile from "../../Pages/Profile/Profile";
+import Logout from "../../Pages/Logout/Logout";
 export const Routes = [
   {
     id: 1,
@@ -45,5 +46,10 @@ export const Routes = [
     id: 7,
     component: Profile,
     path: "/profile",
+  },
+  {
+    id: 8,
+    component: Logout,
+    path: "/logout",
   },
 ];

@@ -33,11 +33,11 @@ export default function Game2() {
   }, [level, Count, bellSound]);
 
   const nextHandler = () => {
+    setCount(randomNo(level + level * 2 + 2, level + level * 3 + 5));
     if (loading) {
       return;
     }
     setLoading(true);
-    setCount(randomNo(level + level * 2, level + level * 3));
     setLevel(level + 1);
     if (level === 10) {
       setStatus(`Your score is ${score}`);

@@ -3,6 +3,12 @@ import bell from "../../Assets/Audio/bell.wav";
 import { randomNo } from "./Game2.style";
 import { Button, Input, Card, Icon, Image } from "semantic-ui-react";
 import { PageWrapper } from "../pageWrapper";
+import { useHistory } from "react-router-dom";
+import { BACKEND_URL } from "../../Assets/Constants/index";
+
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+
 export default function Game2() {
   const [bellSound] = useState(new Audio(bell));
   const [level, setLevel] = useState(0);
@@ -11,6 +17,20 @@ export default function Game2() {
   const [status, setStatus] = useState("Let's Play");
   const [loading, setLoading] = useState(false);
   const [score, setScore] = useState(0);
+
+  const history = useHistory();
+
+  useEffect(() => {
+    fetch(`${BACKEND_URL}auth/protected`, {
+      headers: {
+        Authorization: "Bearer " + cookies.get("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        history.push("/login");
+      });
+  }, [history]);
 
   useEffect(() => {
     if (level === 0) {

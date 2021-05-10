@@ -88,7 +88,7 @@ export default function LogIn() {
           <Icon icon={hipster2} />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Log In
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -124,7 +124,7 @@ export default function LogIn() {
             color="primary"
             className={classes.submit}
           >
-            Sign Up
+            Login
           </Button>
           <Grid container justify="center" style={{ margin: "2rem 0" }}>
             <Grid item>
